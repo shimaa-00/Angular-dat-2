@@ -1,0 +1,19 @@
+<div class="container">
+    <h1> Todo List </h1>
+    <div>
+        <input type="text" #add_todo placeholder="Enter new todo">
+        <input type="button" value="Add" class="btn btn-info" (click)="add(add_todo.value)">
+        <br>
+        <h5 style="display: inline;">TODO List </h5>
+        <input type="text" #search placeholder="Filter" (change)="filter(search.value)">
+        <!-- <input type="button" value="Search" class="btn btn-primary" (click)="filter(search.value)"> -->
+        <h6 class="my-3">There is {{filteredText.length}} todos</h6>
+
+        <div *ngFor="let task of filteredText; let i=index">
+            <div class="tasks-list"> {{task}} <input type="button" value="Compelete" class="btn btn-danger"
+                    (click)="delete(i)"> </div>
+        </div>
+
+    </div>
+
+</div>
